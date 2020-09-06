@@ -1,6 +1,6 @@
 # Hacker News Demo
 
-A demo Hacker News Demo is a website that i
+A demo Hacker News Demo is a website that crawls Hacker News data.
 
 ## Guide
 - [Bootstrapping](#bootstrapping)
