@@ -14,7 +14,7 @@ class Express {
     this.express.use(cors())
     this.server.applyMiddleware({ app: this.express });
     this.httpServer = http.createServer(this.express);
-    // this.server.installSubscriptionHandlers(this.httpServer);
+    this.server.installSubscriptionHandlers(this.httpServer);
   }
 }
 

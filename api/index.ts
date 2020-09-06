@@ -2,11 +2,15 @@ import Express from './config/express';
 import config from './config/index';
 
 const ExpressServer = new Express();
-ExpressServer.init();
+const portNumber = process.env.PORT || config.port
 
-ExpressServer.httpServer.listen(process.env.PORT || config.port, () => {
-  console.log(`? Server started at PORT 3000 `)
+ExpressServer.init();
+ExpressServer.httpServer.listen(portNumber, () => {
+  console.log(`🚀 Server started at PORT ${portNumber} `)
   console.log(
-    `? Server ready at http://localhost:${config.port}${ExpressServer.server.graphqlPath}`
+    `🚀 Server ready at http://localhost:${portNumber}${ExpressServer.server.graphqlPath}`
+  );
+  console.log(
+    `🚀 Subscriptions ready at ws://localhost:${portNumber}${ExpressServer.server.subscriptionsPath}`
   );
 })
